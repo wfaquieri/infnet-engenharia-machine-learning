@@ -1,0 +1,9 @@
+# Filtrando os dados
+shot_type_filter: '3PT Field Goal'
+
+# Train-Test split
+test_size: 0.2
+random_state: 42
+
+# Inicializar uma sessão de experiemntação no PyCaret, garantindo a reprodutibilidade 
+inicializador_pycaret: 123

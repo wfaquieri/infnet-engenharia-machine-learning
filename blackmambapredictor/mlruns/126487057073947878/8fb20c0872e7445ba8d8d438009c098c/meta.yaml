@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Winicius/Documents/infnet-engenharia-machine-learning/blackmambapredictor/mlruns/126487057073947878/8fb20c0872e7445ba8d8d438009c098c/artifacts
+end_time: 1681347275422
+entry_point_name: ''
+experiment_id: '126487057073947878'
+lifecycle_stage: active
+run_id: 8fb20c0872e7445ba8d8d438009c098c
+run_name: PreparacaoDados
+run_uuid: 8fb20c0872e7445ba8d8d438009c098c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1681347274481
+status: 3
+tags: []
+user_id: Winicius

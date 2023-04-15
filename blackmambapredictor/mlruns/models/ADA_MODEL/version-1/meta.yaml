@@ -1,0 +1,12 @@
+creation_timestamp: 1681553299807
+current_stage: None
+description: ''
+last_updated_timestamp: 1681553299807
+name: ADA_MODEL
+run_id: 8b139b1836df4aa1944153a380f75ade
+run_link: ''
+source: file:///C:/Users/Winicius/Documents/infnet-engenharia-machine-learning/blackmambapredictor/mlruns/126487057073947878/8b139b1836df4aa1944153a380f75ade/artifacts/ada_model
+status: READY
+status_message: null
+user_id: null
+version: 1

@@ -1,0 +1,69 @@
+# Here you can define all your data sets by using simple YAML syntax.
+#
+# Documentation for this file format can be found in "The Data Catalog"
+# Link: https://docs.kedro.org/en/stable/data/data_catalog.html
+
+# catalog.yml
+
+# Definição dos conjuntos de dados do projeto
+data_raw:
+  type: pandas.CSVDataSet
+  filepath: data/01_raw/data.csv
+  load_args:
+    usecols:
+      - lat
+      - lon
+      - minutes_remaining
+      - period
+      - playoffs
+      - shot_distance
+      - shot_type
+      - shot_made_flag
+
+df:
+  type: pandas.ParquetDataSet
+  filepath: data/02_intermediate/df.parquet
+
+df_filtrado:
+  type: pandas.ParquetDataSet
+  filepath: data/03_primary/filtered_data.parquet
+
+preprocessed_train_x:
+  type: pandas.ParquetDataSet
+  filepath: data/04_feature/x_train.parquet
+
+preprocessed_test_x:
+  type: pandas.ParquetDataSet
+  filepath: data/04_feature/x_test.parquet
+
+preprocessed_train_y:
+  type: pickle.PickleDataSet
+  filepath: data/04_feature/y_train.pkl
+
+preprocessed_test_y:
+  type: pickle.PickleDataSet
+  filepath: data/04_feature/y_test.pkl
+
+train_test_metrics:
+  type: kedro_mlflow.io.metrics.MlflowMetricsDataSet
+
+# Definição dos modelos do projeto
+lr_model:
+  type: kedro_mlflow.io.artifacts.MlflowArtifactDataSet
+  data_set:
+    type: kedro_mlflow.io.models.MlflowModelSaverDataSet
+    flavor: mlflow.sklearn
+    filepath: data/06_models/lr_model
+
+ada_model:
+  type: kedro_mlflow.io.artifacts.MlflowArtifactDataSet
+  data_set:
+    type: kedro_mlflow.io.models.MlflowModelSaverDataSet
+    flavor: mlflow.sklearn
+    filepath: data/06_models/ada_model
+
+lr_metrics:
+  type: kedro_mlflow.io.metrics.MlflowMetricsDataSet
+
+ada_metrics:
+  type: kedro_mlflow.io.metrics.MlflowMetricsDataSet

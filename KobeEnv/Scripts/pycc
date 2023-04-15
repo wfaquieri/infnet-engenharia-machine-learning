@@ -1,0 +1,3 @@
+#!C:\Users\Winicius\Documents\infnet-engenharia-machine-learning\KobeEnv\Scripts\python.exe
+from numba.pycc import main
+main()

@@ -1,0 +1,16 @@
+artifact_uri: file:///C:/Users/Winicius/Documents/infnet-engenharia-machine-learning/blackmambapredictor/mlruns/126487057073947878/bd82b17a51ba4e35a4b555b0d9b1cc37/artifacts
+deleted_time: 1681464126197
+end_time: 1681302223443
+entry_point_name: ''
+experiment_id: '126487057073947878'
+lifecycle_stage: deleted
+run_id: bd82b17a51ba4e35a4b555b0d9b1cc37
+run_name: __default__
+run_uuid: bd82b17a51ba4e35a4b555b0d9b1cc37
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1681302222832
+status: 4
+tags: []
+user_id: Winicius
