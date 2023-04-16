@@ -1,5 +1,5 @@
 # Filtrando os dados
-shot_type_filter: '3PT Field Goal'
+shot_type_filter: '2PT Field Goal'
 
 # Train-Test split
 test_size: 0.2

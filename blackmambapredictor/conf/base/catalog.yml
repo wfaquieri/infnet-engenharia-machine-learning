@@ -9,20 +9,10 @@
 data_raw:
   type: pandas.CSVDataSet
   filepath: data/01_raw/data.csv
-  load_args:
-    usecols:
-      - lat
-      - lon
-      - minutes_remaining
-      - period
-      - playoffs
-      - shot_distance
-      - shot_type
-      - shot_made_flag
 
-df:
-  type: pandas.ParquetDataSet
-  filepath: data/02_intermediate/df.parquet
+# df:
+#   type: pandas.ParquetDataSet
+#   filepath: data/02_intermediate/df.parquet
 
 df_filtrado:
   type: pandas.ParquetDataSet

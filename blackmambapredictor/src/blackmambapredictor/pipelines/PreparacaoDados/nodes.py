@@ -1,21 +1,11 @@
 """
-This code contains a pipeline for data preparation, called 'PreparacaoDados', generated using Kedro 0.18.7.
+Este arquivo contém as funções responsáveis por processar os dados e realizar as transformações necessárias para o treinamento e avaliação do modelo de predição de arremessos de basquete.
 
-The pipeline consists of three functions:
-- load_data(): loads a CSV file located in '../data/01_raw/data.csv' and selects a subset of columns;
-- filter_data(df): filters the dataframe to include only rows where 'shot_type' equals '2PT Field Goal' and drops any rows with missing values;
-- split_data(df, test_size=0.2, random_state=42): splits the dataframe into training and testing sets using stratified sampling and returns four dataframes: X_train, X_test, y_train, and y_test.
+Funções disponíveis:
+- select_data: seleciona as colunas relevantes do conjunto de dados.
+- split_data: divide os dados em conjuntos de treinamento e teste.
+- split_metrics: calcula e armazena as métricas relativas aos dados de treinamento e teste.
 
-The split_data() function accepts three parameters:
-- df (pd.DataFrame): The dataframe to split.
-- test_size (float): The proportion of the data to use for testing (default = 0.2).
-- random_state (int): The random seed to use for the split (default = 42).
-
-It returns four dataframes:
-- X_train (pd.DataFrame): The features of the training set.
-- X_test (pd.DataFrame): The features of the testing set.
-- y_train (pd.Series): The target values of the training set.
-- y_test (pd.Series): The target values of the testing set.
 """
 
 import pandas as pd
@@ -23,12 +13,9 @@ from sklearn.model_selection import train_test_split
 from kedro_mlflow.io.metrics import MlflowMetricDataSet
 
 def select_data(data: pd.DataFrame):
-    data = data[['lat','lon','minutes_remaining','period','playoffs','shot_distance','shot_type','shot_made_flag']]
-    return data
-
-def filter_data(data: pd.DataFrame, shot_type_filter):
-    df_filtrado = data[data['shot_type'] == shot_type_filter]
-    df_filtrado = df_filtrado.dropna()
+    data = data[data['shot_type'] == '2PT Field Goal']
+    data = data[['lat','lon','minutes_remaining','period','playoffs','shot_distance','shot_made_flag']]
+    data = data.dropna()
     return df_filtrado
 
 def split_data(data: pd.DataFrame, test_size, random_state):

@@ -11,13 +11,7 @@ def create_pipeline(**kwargs) -> Pipeline:
         node(
         func=select_data,
         name='select_data',
-        inputs='data_raw',
-        outputs='df',
-        ),
-        node(
-        func=filter_data,
-        name='filter_data',
-        inputs=['df','params:shot_type_filter'],
+        inputs=['data_raw','params:shot_type_filter'],
         outputs='df_filtrado',
         ),
         node(
